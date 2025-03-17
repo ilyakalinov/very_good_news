@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/very_good_news/static/css/main.2d24adf1.css",
+    "main.js": "/very_good_news/static/js/main.a2932514.js",
+    "static/media/logo.svg": "/very_good_news/static/media/logo.f569e981f2f4be6cf826f9a012e37837.svg",
+    "index.html": "/very_good_news/index.html",
+    "main.2d24adf1.css.map": "/very_good_news/static/css/main.2d24adf1.css.map",
+    "main.a2932514.js.map": "/very_good_news/static/js/main.a2932514.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d24adf1.css",
+    "static/js/main.a2932514.js"
+  ]
+}
