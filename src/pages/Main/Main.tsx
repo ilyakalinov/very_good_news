@@ -50,7 +50,7 @@ export const Main = (): JSX.Element => {
       <View>
         <Header />
         <Filters onSearch={onSearch} sourses={sources} />
-        {news?.length && <List news={news || []} />}
+        {!!news?.length && <List news={news || []} />}
         <Footer />
       </View>
     </div>

@@ -30,7 +30,7 @@ export const Filters = ({ onSearch, sourses }: FiltersProps): JSX.Element => {
           // @ts-ignore
           onChange={setSources}
         />
-        <InputFilter handleChange={setQueryString} />
+        <InputFilter value={queryString} handleChange={setQueryString} />
       </div>
       <Button onClick={handleSearch} />
     </div>

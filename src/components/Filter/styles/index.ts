@@ -1,1 +1,1 @@
-export { customStylesSelect, customStylesSelectRequredFn } from "./custom-select.style";
+export { customStylesSelect } from "./custom-select.style";

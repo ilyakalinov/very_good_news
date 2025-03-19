@@ -6,6 +6,8 @@ import {
 } from "react-select";
 import { customStylesSelect } from "./styles";
 import { ForwardedRef, forwardRef } from "react";
+import cleaner from "../../assets/images/cleaner.svg";
+import styles from "./Filter.module.scss";
 
 export interface Option {
   value: any;
@@ -53,9 +55,20 @@ export const Filter = forwardRef(
       </components.MultiValue>
     );
 
-    const allOption = { value: "all", label: "Все" };
+    const CustomClearIndicator = (props: any) => {
+      const {
+        children = (
+          <img src={cleaner} alt="img" className={styles["cleaner-icon"]} />
+        ),
+        ...rest
+      } = props;
 
-    const onChange = (selected: Option[]) => {};
+      return (
+        <components.ClearIndicator {...rest}>
+          {children}
+        </components.ClearIndicator>
+      );
+    };
 
     return (
       <ReactSelect
@@ -68,33 +81,12 @@ export const Filter = forwardRef(
         hideSelectedOptions={false}
         noOptionsMessage={() => "Ничего не найдено"}
         loadingMessage={() => "Поиск..."}
-        options={[allOption, ...(options || [])]}
-        // @ts-ignore
-        onChange={(selected: Option[], event) => {
-          if (selected !== null && selected.length > 0) {
-            if (selected[selected.length - 1].value === allOption.value) {
-              // @ts-ignore
-              return onChange([allOption, ...options]);
-            }
-            // @ts-ignore
-            let result = [];
-            if (selected.length === options.length) {
-              if (selected.includes(allOption)) {
-                result = selected.filter(
-                  (option) => option.value !== allOption.value
-                );
-              } else if (event.action === "select-option") {
-                result = [allOption, ...options];
-              }
-              // @ts-ignore
-              return onChange(result);
-            }
-          }
-
-          return onChange(selected);
+        options={options || []}
+        components={{
+          Option: CheckboxOption,
+          MultiValue,
+          ClearIndicator: CustomClearIndicator,
         }}
-        components={{ Option: CheckboxOption, MultiValue }}
-        // @ts-ignore
         value={selectedValues}
         {...props}
       />
