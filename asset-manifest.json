@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/very_good_news/static/css/main.cbfbcb2c.css",
-    "main.js": "/very_good_news/static/js/main.ee67f40f.js",
+    "main.css": "/very_good_news/static/css/main.48ce3736.css",
+    "main.js": "/very_good_news/static/js/main.6eb0531e.js",
     "static/media/logo.svg": "/very_good_news/static/media/logo.f569e981f2f4be6cf826f9a012e37837.svg",
     "index.html": "/very_good_news/index.html",
     "static/media/next-arrow.svg": "/very_good_news/static/media/next-arrow.6508d1ce4c2b89e662c83f978acca7c1.svg",
     "static/media/cleaner.svg": "/very_good_news/static/media/cleaner.5d3547d8344d006a4a74a4a9503f62f8.svg",
-    "main.cbfbcb2c.css.map": "/very_good_news/static/css/main.cbfbcb2c.css.map",
-    "main.ee67f40f.js.map": "/very_good_news/static/js/main.ee67f40f.js.map"
+    "main.48ce3736.css.map": "/very_good_news/static/css/main.48ce3736.css.map",
+    "main.6eb0531e.js.map": "/very_good_news/static/js/main.6eb0531e.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbfbcb2c.css",
-    "static/js/main.ee67f40f.js"
+    "static/css/main.48ce3736.css",
+    "static/js/main.6eb0531e.js"
   ]
 }
