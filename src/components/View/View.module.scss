@@ -1,0 +1,15 @@
+.view {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 200px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 1210px) {
+    margin: 0 100px;
+  }
+
+  @media screen and (max-width: 771px) {
+    margin: 0 30px;
+  }
+}
