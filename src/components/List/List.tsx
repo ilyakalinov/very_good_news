@@ -2,8 +2,8 @@ import { useState } from "react";
 import { News } from "../../pages/Main/Main";
 import { Card } from "../Card";
 import arrow from "../../assets/images/next-arrow.svg";
-import styles from "./List.module.scss";
 import ReactPaginate from "react-paginate";
+import styles from "./List.module.scss";
 
 const OFFSET = 10;
 
