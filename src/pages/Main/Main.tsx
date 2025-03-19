@@ -25,20 +25,26 @@ export interface Sourse {
 export const Main = (): JSX.Element => {
   const [news, setNews] = useState<News[]>();
   const [sources, setSources] = useState<Sourse[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const onSearch = (sources: Option[], query?: string) => {
-    console.log(sources);
+    setIsLoading(true);
     const sourcesParam = sources.map((source) => source.value);
 
-    getNews(sourcesParam, query).then((res: any) => {
-      setNews(res?.data || []);
-    });
+    getNews(sourcesParam, query)
+      .then((res: any) => {
+        setNews(res?.data || []);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
-    getNews().then((res: any) => {
-      setNews(res?.data || []);
-    });
+    setIsLoading(true);
+    getNews()
+      .then((res: any) => {
+        setNews(res?.data || []);
+      })
+      .finally(() => setIsLoading(false));
 
     getSourses().then((res: any) => {
       setSources(res?.data || []);
@@ -49,7 +55,7 @@ export const Main = (): JSX.Element => {
     <div className={styles["main"]}>
       <View>
         <Header />
-        <Filters onSearch={onSearch} sourses={sources} />
+        <Filters onSearch={onSearch} sourses={sources} isLoading={isLoading} />
         {!!news?.length && <List news={news || []} />}
         <Footer />
       </View>

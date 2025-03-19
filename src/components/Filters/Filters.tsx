@@ -9,9 +9,14 @@ import styles from "./Filters.module.scss";
 interface FiltersProps {
   onSearch: (sourses: Option[], query?: string) => void;
   sourses: Sourse[];
+  isLoading?: boolean;
 }
 
-export const Filters = ({ onSearch, sourses }: FiltersProps): JSX.Element => {
+export const Filters = ({
+  onSearch,
+  sourses,
+  isLoading,
+}: FiltersProps): JSX.Element => {
   const [soursesFilter, setSources] = useState<Option[]>([]);
   const [queryString, setQueryString] = useState<string | undefined>();
 
@@ -32,7 +37,7 @@ export const Filters = ({ onSearch, sourses }: FiltersProps): JSX.Element => {
         />
         <InputFilter value={queryString} handleChange={setQueryString} />
       </div>
-      <Button onClick={handleSearch} />
+      <Button onClick={handleSearch} isLoading={isLoading} />
     </div>
   );
 };
