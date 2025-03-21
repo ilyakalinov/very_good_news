@@ -19,7 +19,7 @@ export const Card = ({ news }: CardProps): JSX.Element => {
           {news.url}
         </a>
         <div className={styles["info-date"]}>
-          {format(new Date(news.publication_date), "dd-MM-yyyy")}
+          {format(new Date(news.publication_date), "dd.MM.yyyy")}
         </div>
       </div>
     </div>

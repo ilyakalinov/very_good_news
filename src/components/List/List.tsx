@@ -36,7 +36,7 @@ export const List = ({ news }: ListProps): JSX.Element => {
           breakLabel="..."
           onPageChange={handlePageClick}
           pageRangeDisplayed={5}
-          pageCount={(news?.length || 0) / OFFSET}
+          pageCount={Math.ceil(news?.length / OFFSET)}
           nextLabel={
             <div className={styles["arrow-next"]}>
               {itemOffset < news.length - OFFSET && (
@@ -51,6 +51,7 @@ export const List = ({ news }: ListProps): JSX.Element => {
           }
           initialPage={0}
           renderOnZeroPageCount={null}
+          disableInitialCallback={true}
         />
       )}
     </div>
